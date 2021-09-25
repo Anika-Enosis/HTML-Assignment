@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="file1.css">
+</head>
+<body>
+<input id="searchbar" onkeyup="search()" type="text"
+        name="search" placeholder="Search Name..">
+
+<h3 align = "center" style="font-family:verdana" ><b>Tourist Place Table</b></h3>
+
+<table id="myTable" align = "center" border = "1px" cellpadding = "5" cellspacing = "5" width = "80%">
+<tr class="heading">
+    <th>Name</th>
+    <th>Address</th>
+    <th>Rating</th>
+    <th>Picture</th>
+    <th>Action</th>
+    
+  </tr>
+<tr id = "1" class="heading">
+    <td>Mozilla</td>
+    <td>Dhanmondi</td>
+    <td>4.9</td>
+    <td><img src="img_girl.jpg" alt="Girl in a jacket" width="100" height="100"></td>
+    <td><button type="update" onclick ="NewUpdate('1')">Update</button>
+    <button type="delete" onclick ="DeleteRow('1')">Delete</button></td>
+  </tr>
+ <tr id = "2" class="heading">
+    <td>Chrome</td>
+    <td>Mohammadpur</td>
+    <td>4.8</td>
+    <td><img src="pic_trulli.jpg" alt="Italian Trulli" width="100" height="100"></td>
+    <td><button type="update" onclick ="NewUpdate('2')">Update</button>
+    <button type="delete" onclick = "DeleteRow('2')">Delete</button></td>
+  </tr>
+
+</table>
+
+ <div class="padding-sort">
+    <input type="button" value="Sort" onclick="sortTable()"/>
+ </div>
+ 
+<h3 align = "center" style="font-family:verdana" ><b>Add a new Tourist Place</b></h3>
+
+<form>
+<div class="row">
+    <div class="col-10">
+      <label for="name">Name:<span class="required">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="name" name="name" placeholder="Enter Name" required/>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-10">
+      <label for="adress">Address:<span class="required">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="adress" name="adress" maxlength = 30 placeholder="Enter Address" required/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-10">
+      <label for="rating">Rating:</label>
+    </div>
+    <div class="col-75">
+      <input type="number" id="rating" name="rating" min = "1" max = "5" value = "1" >
+      <span class="textColor"><b>Range 1 to 5</b></span>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="col-10">
+      <label for="picture">Picture:</label>
+    </div>
+    <div class="col-75">
+    <span>  <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)" > </span>
+    </div>
+  </div>
+  
+  <div class="row">
+  <div class="padding-left">
+    <input type="button" id="Submit" value="Submit" onclick="GetValues()"/>
+    <span class = "padding-button">
+    <input type="reset" id="Reset" value="Reset" />
+   </div>
+  </div>
+
+  <div class="row">
+  <div class=" padding-left anchor-color">
+    <a href="https://www.google.com/search?q=tourist+places+in+bangladesh&rlz=1C1GCEU_enBD964BD965&oq=tourist+&aqs=chrome.1.69i57j0i512j0i457i512j0i402j0i512l6.4772j0j7&sourceid=chrome&ie=UTF-8" >
+<b>Back to Tourist Place List</b></a>
+    </div>
+  </div>   
+</form>
+  <script src="file2.js"></script>               
+</body>
+</html>
+

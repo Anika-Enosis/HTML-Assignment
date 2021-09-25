@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+#searchbar{
+     width: 75%;
+     padding:15px;
+     margin-left: 10%;
+     padding-top: 12px;
+     padding-bottom: 12px;
+     border-radius: 5px;
+   }
+
+
+
+input[type=text],input[type=number],[type=file],select, textarea,file {
+  width: 85%;
+  padding: 6px ;
+  border: 1px ;
+  border-radius: 5px;
+  resize: vertical;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.2);
+  
+}
+
+input[type=number]::-webkit-inner-spin-button  {
+    opacity: 1
+  }
+
+input[type=button] {
+  padding: 12px ;
+  border: 0px ;
+  border-radius: 5px;
+  box-shadow: 1px;
+  background-color: #45a049;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: white;  
+}
+
+input[type=reset] {
+  padding: 12px ;
+  border: 0px ;
+  border-radius: 5px;
+  box-shadow: 4px;
+  background-color: #d99c18;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.textColor{
+    color: red;
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.textstyle{
+    font-size: 8px;
+    padding-left:10px;
+}
+
+.col-10 {
+  padding-left: 170px;
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 65%;
+  margin-top: 6px;
+}
+
+.col-15 {
+  float: left;
+  width: 15%;
+  margin-top: 6px;
+}
+
+.col-60{
+  float: left: 20%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  padding: 10px;
+  clear: both;
+}
+
+.padding-left{
+  padding-left:69%;
+}
+
+.padding-sort{
+  padding-top: 10px;
+  padding-left:82%;
+}
+
+.padding-button{
+  padding-left:15px;
+}
+
+.required {
+  color: red;
+}
+
+.padding-file{
+  padding-left:15px;
+  padding-top: 1px;
+  font-size: 10px;
+}
+
+.picture-style{
+  width:390px;
+  height:32px;
+  border:2px solid #f04329;
+  border-radius: 5px;
+}
+
+.relative1 {
+  position: absolute;
+  font-size: 10px;
+  left: 1035px;
+  top : 225px;  
+}
+
+.relative2 {
+  position: absolute;
+  font-size: 10px;
+  left: 1035px;
+  top : 236px;  
+}
+
+.relative3 {
+  position: absolute;
+  font-size: 10px;
+  left: 1035px;
+  top : 247px;  
+}
+
+.relative4 {
+  position: absolute;
+  font-size: 10px;
+  left: 1035px;
+  top : 258px;
+}
+
+.anchor-color{
+ padding-top: 7px;
+ font-size: 11px;
+ font-family:verdana;
+ color:green;
+}
+
+.heading{
+  width: 85%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px ;
+  border-radius: 5px;
+  resize: vertical;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.2);
+  text-align: center; 
+}
+
+button[type=update] {
+  padding: 12px ;
+  border: 0px ;
+  border-radius: 5px;
+  background-color: #45a049;
+  box-shadow: 1px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+button[type=delete] {
+  padding: 12px ;
+  border: 0px ;
+  border-radius: 5px;
+  background-color: #d99c18;
+  box-shadow: 1px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+</style>
+</head>
+<body>
+<input id="searchbar" onkeyup="search()" type="text"
+        name="search" placeholder="Search Name..">
+
+<h3 align = "center" style="font-family:verdana" ><b>Tourist Place Table</b></h3>
+
+<table id="myTable" align = "center" border = "1px" cellpadding = "5" cellspacing = "5" width = "80%">
+<tr class="heading">
+    <th>Name</th>
+    <th>Address</th>
+    <th>Rating</th>
+    <th>Picture</th>
+    <th>Action</th>
+    
+  </tr>
+<tr id = "1" class="heading">
+    <td>Mozilla</td>
+    <td>Dhanmondi</td>
+    <td>4.9</td>
+    <td><img src="img_girl.jpg" alt="Girl in a jacket" width="50" height="50"></td>
+    <td><button type="update" onclick ="NewUpdate('1')">Update</button>
+    <button type="delete" onclick ="DeleteRow('1')">Delete</button></td>
+  </tr>
+ <tr id = "2" class="heading">
+    <td>Chrome</td>
+    <td>Mohammadpur</td>
+    <td>4.8</td>
+    <td><img src="pic_trulli.jpg" alt="Italian Trulli" width="50" height="50"></td>
+    <td><button type="update" onclick ="NewUpdate('2')">Update</button>
+    <button type="delete" onclick = "DeleteRow('2')">Delete</button></td>
+  </tr>
+
+</table>
+
+ <div class="padding-sort">
+    <input type="button" value="Sort" onclick="sortTable()"/>
+ </div>
+ 
+<h3 align = "center" style="font-family:verdana" ><b>Add a new Tourist Place</b></h3>
+
+<form>
+<div class="row">
+    <div class="col-10">
+      <label for="name">Name:<span class="required">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="name" name="name" placeholder="Enter Name" required/>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-10">
+      <label for="adress">Adress:<span class="required">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="adress" name="adress" placeholder="Enter Adress" required/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-10">
+      <label for="rating">Rating:</label>
+    </div>
+    <div class="col-75">
+      <input type="number" id="rating" name="rating" min = "1" max = "5" value = "1" >
+      <span class="textColor"><b>Range 1 to 5</b></span>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="col-10">
+      <label for="picture">Picture:</label>
+    </div>
+    <div class="col-75">
+    <span>  <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)" > </span>
+    </div>
+  </div>
+  
+  <div class="row">
+  <div class="padding-left">
+    <input type="button" id="Submit" value="Submit" onclick="GetValues()"/>
+    <span class = "padding-button">
+    <input type="reset" id="Reset" value="Reset" />
+   </div>
+  </div>
+
+  <div class="row">
+  <div class=" padding-left anchor-color">
+    <a href="https://www.google.com/search?q=tourist+places+in+bangladesh&rlz=1C1GCEU_enBD964BD965&oq=tourist+&aqs=chrome.1.69i57j0i512j0i457i512j0i402j0i512l6.4772j0j7&sourceid=chrome&ie=UTF-8" >
+<b>Back to Tourist Place List</b></a>
+    </div>
+  </div>   
+</form>
+<script> 
+
+     function DeleteRow(ID) {
+           var x = confirm("Are you sure you want to delete?");
+  if (x)
+      document.getElementById(ID).remove(); 
+  else
+    return false;
+             
+          }
+
+     var url,oldName,OldAddr,OldRating;
+     var ID_seq=3;
+     
+     var loadFile = function(event) {
+	        var image = document.getElementById("img");
+	        url = URL.createObjectURL(event.target.files[0]);
+     };
+
+     function UpdateRow(ID) {
+     	     var Name = document.getElementById("name").value;
+             var Adress = document.getElementById("adress").value;
+             
+             if(document.getElementById("rating").value > 5){
+             	document.getElementById("rating").value = 5
+             }
+             if(document.getElementById("rating").value < 1){
+             	document.getElementById("rating").value = 1
+             }
+             var Rating = document.getElementById("rating").value;
+             //var Picture = document.getElementById("img").value;
+             //var image = document.getElementById('output');
+             var td = document.getElementById(ID);
+             td.getElementsByTagName("td")[0].innerHTML=Name;
+             td.getElementsByTagName("td")[1].innerHTML=Adress;
+             td.getElementsByTagName("td")[2].innerHTML=Rating;
+             //td.getElementsByTagName("td")[3].src=image.src;
+             td.getElementsByTagName("td")[3].innerHTML="<img src=\"" + url + "\" alt=\"img\" width=\"50\" height=\"50\">";
+              var submit = document.getElementById("Submit");
+              var reset = document.getElementById("Reset");
+              reset.value="ResetRow";
+              submit.value = "Submit";
+              submit.setAttribute( "onClick", "GetValues();" );
+              reset.setAttribute("type","button");
+              reset.setAttribute("style", "background-color: #d99c18;");
+              reset.setAttribute("onClick", "ResetRow("+ID+");");
+             //alert(submit.onclick);
+     }
+     
+     function ResetRow(ID)
+     {
+     	     var td = document.getElementById(ID);
+             td.getElementsByTagName("td")[0].innerHTML=oldName;
+             td.getElementsByTagName("td")[1].innerHTML=OldAddr;
+             td.getElementsByTagName("td")[2].innerHTML=OldRating;
+             oldName="";
+             OldAddr="";
+             OldRating="";
+             var reset = document.getElementById("Reset");
+             reset.value="Reset";
+             reset.setAttribute("type","reset");
+             //reset.setAttribute("style", "background-color: #d99c18;");
+             reset.setAttribute("onClick", "");
+             //<input type="reset" id="Reset" value="Reset" />
+     }
+     function NewUpdate(ID){
+             var td = document.getElementById(ID);
+             oldName=td.getElementsByTagName("td")[0].innerHTML;
+             OldAddr=td.getElementsByTagName("td")[1].innerHTML;
+             OldRating=td.getElementsByTagName("td")[2].innerHTML;
+             document.getElementById("name").value =  td.getElementsByTagName("td")[0].innerHTML;
+             document.getElementById("adress").value = td.getElementsByTagName("td")[1].innerHTML;
+             document.getElementById("rating").value = td.getElementsByTagName("td")[2].innerHTML;
+            // document.getElementById("img").value = td.getElementsByTagName("td")[3].innerHTML;
+             
+             var submit = document.getElementById("Submit");
+             submit.value = "UpdateRow";
+             submit.setAttribute( "onClick", "UpdateRow("+ID+");" );
+             //alert(submit.onclick);
+             
+     	     
+     }
+
+     function GetValues() {
+     	     var Name = document.getElementById("name").value;
+             var Adress = document.getElementById("adress").value;
+             if(document.getElementById("rating").value > 5){
+             	document.getElementById("rating").value = 5
+             }
+             if(document.getElementById("rating").value < 1){
+             	document.getElementById("rating").value = 1
+             }
+             var Rating = document.getElementById("rating").value;
+             //var Rating = document.getElementById("rating").value;
+             //var Picture = document.getElementById("img").value;
+             var table = document.getElementById("myTable");
+  	     var len = table.rows.length;
+  	     var row = table.insertRow(len);
+             row.className = 'heading';
+             //row.id="\""+ID_seq+"\"";
+             row.id=ID_seq;
+  	     var cell1 = row.insertCell(0);
+  	     var cell2 = row.insertCell(1);
+             var cell3 = row.insertCell(2);
+             var cell4 = row.insertCell(3);
+             var cell5 = row.insertCell(4);
+             //var cell6 = row.insertCell(5);
+  	     cell1.innerHTML = Name;
+  	     cell2.innerHTML = Adress;
+             cell3.innerHTML = Rating;
+             cell4.innerHTML = "<img src=\"" + url + "\" alt=\"img\" width=\"50\" height=\"50\">";
+             cell5.innerHTML = "<button type=\"update\" onclick=\"NewUpdate('"+row.id+"')\">Update</button> <button type=\"delete\" onclick =\"DeleteRow('"+row.id+"')\">Delete</button>";
+             ID_seq++;
+           }
+           
+       function search() {
+    	  var input, input_value, found, table, tr, td, i, j;
+    	  input = document.getElementById("searchbar");
+          input_value = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td");
+          for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(input_value) > -1) {
+                found = true;
+            }
+        }
+         if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }    
+}
+
+function search1() {
+    	  var input, input_value, found, table, tr, td, i, j;
+    	  input = document.getElementById("searchbar");
+          input_value = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td");
+          //for (j = 0; j < td.length; j++) {
+            if (td[0].innerHTML.toUpperCase().includes(input_value)) {
+                found = true;
+            }
+        //}
+         if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+      }    
+  }
+ 
+    function sortTable() {
+          var table, rows, switching, i, x, y, shouldSwitch;
+          table = document.getElementById("myTable");
+          switching = true;
+  
+          while (switching) {
+              switching = false;
+              rows = table.rows;
+              for (i = 1; i < (rows.length - 1); i++) {
+                  shouldSwitch = false;
+                  x = rows[i].getElementsByTagName("td")[2];
+                  y = rows[i + 1].getElementsByTagName("td")[2];
+                  if (x.innerHTML < y.innerHTML) {
+                     shouldSwitch = true;
+                     break;
+                   } 
+             }
+
+       if (shouldSwitch) {
+           rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+           switching = true;
+    }
+  }
+  }
+           
+</script> 
+</body>
+</html>
+
